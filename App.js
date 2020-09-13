@@ -2,11 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import TestButton from './components/TestButton'
+import TopBar from './components/TopBar';
+import Constants from 'expo-constants';
 
 export default function App() {
   return (
     <View style={styles.container}>
+    <View style={styles.statusBar} />
+      <TopBar></TopBar>
       <Text>Open up App.js to start working on your app!</Text>
+      
       <TestButton></TestButton>
       <StatusBar style="auto" />
     </View>
@@ -14,10 +19,17 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+
+  statusBar: {
+    backgroundColor: '#C2185B',
+    height: Constants.statusBarHeight
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#bbb',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    // justifyContent: 'center',
+
   },
 });
